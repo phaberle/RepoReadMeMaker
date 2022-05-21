@@ -4,22 +4,25 @@ const cleanupAnswers = (object) => {
     object = x.replace(regex, '<br>');
     return object;
   }
-
   
-const getLicenseTag = (object) => {
-    let x = JSON.stringify(object);
-    console.log("stringified: " + x);
+  const getLicenseTag = (string) => {
+    let x = string
     switch (x) {
-      case  "[\"Apache 2.0\"]":
-        object = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+      case  "Apache 2.0":
+        string = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
         break;
-      case  "[\"MIT\"]":
-        object = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+      case  "MIT":
+        string = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
         break;
-      case "[\"GNU GPLv3\"]":
-        object = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+      case "GNU GPLv3":
+        string = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
     }
+    object= [x,string];
     return object;
   }
 
-  module.exports={cleanupAnswers,getLicenseTag};
+const writeMDFile =(object)=>{
+console.log(object);
+}
+
+  module.exports={cleanupAnswers,getLicenseTag,writeMDFile};

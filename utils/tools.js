@@ -32,12 +32,12 @@ const writeMDFile = (object) => {
     `
 # ${projectTitle}
 
-## Description
-${description}
-
 ## License
 ${license}<br>
 ${licURL}
+
+## Description
+${description}
 
 ## Table of Contents
 * [Description](#description)

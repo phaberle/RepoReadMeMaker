@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const fs = require('fs');
 const ListPrompt = require("inquirer/lib/prompts/list");
 const { Console } = require("console");
-const { cleanupAnswers, getLicenseTag, writeMDFile } = require('./tools.js');
+const { cleanupAnswers, getLicenseTag, writeMDFile } = require('./utils/tools');
 
 
 const UserInput = async () => {
